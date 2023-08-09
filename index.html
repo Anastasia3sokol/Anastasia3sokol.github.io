@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,22 +8,70 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Nancy Drew Fan Blog</h1>
-        <nav>
-            <!-- Add navigation links here -->
-        </nav>
-    </header>
+    <!-- Header Ribbon -->
+    <div class="header-ribbon">
+        <header>
+            <h1>Nancy Drew Fan Blog</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="games.html">Games</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </header>
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Add your blog posts and content here -->
-    </main>
+<!-- Banner with Changing Pictures -->
+<div class="banner">
+    <div class="slide-overlay active">
+        <div class="slide" style="background-image: url('Media/960x250_bannerMine.jpg');"></div>
+        <div class="slide" style="background-image: url('Media/960x250_bannerBridge.jpg');"></div>
+        <div class="slide" style="background-image: url('Media/960x250_bannerCamera.jpg');"></div>
+    </div>
+</div>
 
-    <!-- Footer -->
-    <footer>
+
+    <!-- Attention-Capturing Links -->
+    <div class="attention-links">
+        <a href="gallery.html" class="attention-link">Gallery</a>
+        <a href="games.html" class="attention-link">Games</a>
+        <a href="blog.html" class="attention-link">Blog</a>
+    </div>
+
+    <!-- Quizzes -->
+    <div class="quizzes">
+        <!-- Add your quizzes here -->
+    </div>
+
+    <!-- Disclaimer and Clarifications -->
+    <div class="disclaimer">
+        <p>Disclaimer: The content of this fan blog is for informational and entertainment purposes only.</p>
+    </div>
+
+    <!-- Reviews -->
+    <div class="reviews">
+        <!-- Add your reviews here -->
+    </div>
+
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
         <p>&copy; 2023 Your Name. All rights reserved.</p>
     </footer>
+    
+<!-- JavaScirpt for banner images transition -->
+
+<script>
+    const slideOverlay = document.querySelector(".slide-overlay");
+    const slides = slideOverlay.querySelectorAll(".slide");
+    const slideWidth = slides[0].offsetWidth; // Get the width of one slide
+    let currentSlideIndex = 0;
+
+    function changeSlide() {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        slideOverlay.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+    }
+
+    setInterval(changeSlide, 5000); // Change slide every 5 seconds
+</script>
 </body>
 </html>
